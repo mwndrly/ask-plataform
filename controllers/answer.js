@@ -6,7 +6,6 @@ const store = async (req, res) => {
 			body: req.body.answer,
 			question_id: req.body.question_id
 		};
-
 		const { question, answers } = await AnswerService.store(data);
 
 		res.render('question', { question, answers });
@@ -18,9 +17,7 @@ const store = async (req, res) => {
 
 const index = async (req, res) => {
 	try {
-		const id =  ~~req.params.id;
-
-		const { question, answers } = await AnswerService.index(id);
+		const { question, answers } = await AnswerService.index(req.params.id);
 
 		res.render('question', { question, answers })
 	} catch (error) {

@@ -6,7 +6,7 @@ const routes = require('./routes');
 const init = () => {
 	databaseConnection();
 	startServer();
-}
+};
 
 const databaseConnection = async () =>{
 	try {
